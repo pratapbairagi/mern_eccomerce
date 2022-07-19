@@ -1,0 +1,21 @@
+
+.productFeaturedContainer{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+}
+.productFeaturedHeadingContainer{
+    width: 100%;
+    padding: 3% 0;
+}
+.productFeaturedHeading{
+    width: max-content;
+    margin: auto;
+    font-family:cursive;
+    color: tomato;
+    border-bottom: 1px solid red;
+}

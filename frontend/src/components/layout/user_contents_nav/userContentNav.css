@@ -1,0 +1,111 @@
+.userContainer {
+    position: fixed;
+    top: 11vh;
+    right: 1rem;
+}
+
+.userProfileBtn {
+    border: 1px solid red;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: white;
+    /* margin:0 auto; */
+}
+
+.userProfileIcon {
+    /* width: 2rem; */
+    fill: tomato;
+    width: 90%;
+    height: 90%;
+}
+
+.userContents_container {
+    width: max-content;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 4px;
+    padding: 4px 0;
+    transition: 2s ease all;
+}
+
+.userContents_container .userContentIcon {
+    box-shadow: 0 0 2px grey;
+    width: 2rem;
+    height: 2rem;
+    display: none;
+    transition: 2s all;
+    border-radius: 50%;
+    position: relative;
+    background-color: white;
+}
+.userContents_container .userContentIcon span {
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 70%;
+    font-weight: 600;
+    color: white;
+    border-radius: 50%;
+    background-color: tomato;
+    box-shadow: 0 0 0 2px white;
+    text-align: center;
+    line-height: 1.4rem;
+    top: -.4rem;
+    right: -.5rem;
+}
+
+.userContentLink {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.userContentLink svg{
+    fill: tomato;
+}
+
+.userContents_container.active {
+    height: max-content;
+    padding: 0;
+}
+
+.userContents_container .userContentIcon.active {
+    display: grid;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .userProfileBtn {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .userContents_container .userContentIcon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .userContents_container .userContentIcon span {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        font-size: 90%;
+        font-weight: 600;
+        color: white;
+        border-radius: 50%;
+        background-color: red;
+        text-align: center;
+        line-height: 1.9rem;
+        top: -.4rem;
+        right: -.6rem;
+    }
+}

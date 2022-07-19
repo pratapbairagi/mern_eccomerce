@@ -1,0 +1,207 @@
+
+.filterProduct_container{
+    row-gap: .5rem;
+    padding-top:20vh;
+    padding: 8rem .5rem;
+    margin:auto;
+    max-width:1200px;
+    display:flex;
+    flex-wrap:wrap;
+}
+.products_filterProductContainer{
+    display:flex; 
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filterContainer{
+    position: relative;
+    display:flex;
+    flex-direction: column; 
+    flex-wrap:wrap; 
+    justify-content:center;
+    align-items: center;
+    row-gap: .5rem;
+    column-gap: .5rem;
+    font-size: 80%;
+    background-color: white;
+    box-shadow: 0 0 2px grey;
+    padding: 2.5rem .1rem .5rem .1rem;
+}
+
+.filterContainer::before{
+    position: absolute;
+    content: "Filter";
+    /* margin-top: -85%;
+    margin-left: -15%; */
+    font-size: 160%;
+    font-weight: 600;
+    padding: .5rem;
+    left: 2%;
+    top: 0%;
+}
+.priceRange_container{
+    display: flex;
+    flex-direction:column;
+    row-gap: 3px;
+    column-gap: 4px;
+    align-items: center;
+}
+.priceRange{
+    display: flex;
+    flex-direction: column;
+}
+.priceRange_container input{
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    width: 4.5rem;
+    text-align:center;
+}
+.priceRange_container button{
+    width: 4.5rem; 
+    display: grid; 
+    place-items:center; 
+    border: 1px solid grey;
+}
+.filterContainer select{
+    width: 4.5rem; 
+    height:max-content;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+.filterContainer h5{
+    position: absolute;
+    top: 2%;
+    left: 10%;
+}
+
+.sortingProductContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.priceLowToHigh, .priceHighToLow{
+    font-size: 60%;
+    font-weight: 700;
+    height: 30px;
+    display: grid;
+    place-items: center;
+}
+
+.switch{
+    position: relative;
+    width: 4.5rem;
+    height: 20px;
+    padding: 2px;
+    border-radius: 999px;
+    background-color: tomato;
+}
+.slider{
+    position: relative;
+    width: 22px;
+    height: 16px;
+    float: left;
+    cursor: pointer;
+    background-color: white;
+    transition: .4s;
+    border-radius: 999px;
+}
+.switchInput{
+    position: absolute;
+    width: 66px;
+    height: 16px;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.switchInput:checked + .slider{
+    float: right;
+    transition: .4s;
+}
+.switchInput:checked + .slider::before{
+    content: "LOW";
+    font-weight: 700;
+    color: white;
+    height: 20px;
+    left: -38px;
+    font-size: 100%;
+    position: absolute;
+    top: -2px;
+    line-height: 150%;
+}
+.slider::before{
+    content: "HIGH";
+    font-weight: 700;
+    color: white;
+    height: 20px;
+    left: 28px;
+    font-size: 100%;
+    position: absolute;
+    top: -2px;
+    line-height: 150%;
+}
+/* .slider::after{
+    content: "LOW";
+    font-weight: 700;
+    color: white;
+    height: 20px;
+    left: -40px;
+    font-size: 100%;
+    position: absolute;
+    top: -2px;
+    line-height: 150%;
+} */
+
+
+
+
+@media only screen and (max-width: 767px){
+.filterProduct_container{
+    padding: 8rem .5rem;
+}
+    .filterContainer{
+        flex-direction: row;
+        padding: .5rem .5rem;
+    }
+    .priceRange_container{
+        flex-direction:column;
+    }
+    .priceRange_container input:first-child{
+        width: 2rem;
+        padding:0;
+    }
+    .priceRange_container input:nth-child(2), .priceRange button{
+        width: 3rem;
+        padding:0;
+    }
+    .priceRange{
+        column-gap: 2px;
+    }
+    .filterContainer h5{
+        position: absolute;
+        top: 3%;
+        left: 5%;
+    }
+    .priceRange{
+        display: flex;
+        flex-direction: row;
+    }
+    .filterContainer::before{
+        position: absolute;
+        content: "Filter";
+        top: -2.37rem;
+        left: 0;
+        font-size: 160%;
+        font-weight: 600;
+        padding: .2rem .5rem;
+        background-color: white;
+        box-shadow: 0 -1px 2px grey;
+        /* border: 1px solid red; */
+    }
+}

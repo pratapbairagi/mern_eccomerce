@@ -1,0 +1,31 @@
+
+.orderSuccess_container{
+    width:100%;
+    height:max-content;
+    min-height:90vh;
+    margin-top:10vh;
+    display: grid;
+    place-items: center;
+}
+.orderSuccess{
+    width: max-content;
+    /* padding: .5rem 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: green; */
+}
+.orderSuccess h3{
+    background-color: rgb(19, 182, 19);
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: 500;
+}
+.orderSuccess button{
+    background-color: grey;
+    color: white;
+    padding: .2rem .6rem;
+    border-radius: 4px;
+}
+

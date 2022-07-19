@@ -1,0 +1,154 @@
+
+.adminContainer{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    height: max-content;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0;
+    justify-content: flex-start;
+}
+.adminContainer aside{
+    width: 7rem;
+    /* background-color:rgb(243, 221, 77); */
+    background-color: tomato;
+    min-height: 100vh;
+    height: 100%;
+    padding: .5rem 0 .5rem .5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: .7rem;
+}
+
+
+
+.adminContainer aside li{
+    padding: .1rem .8rem;
+    height: 2.7rem;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: .7s ease-in-out;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.adminContainer aside li svg{
+    fill: white;
+    transition: .7s all;
+}
+.adminContainer aside li span{
+    color: white;
+    font-size: 70%;
+    margin-left: 5px;
+}
+.adminContainer aside li.active span{
+    color: tomato;
+}
+
+.adminContainer aside li.active svg{
+    fill: tomato;
+}
+.adminContainer aside li.active{
+    background-color: white;
+    color: tomato;
+}
+
+.adminContainer aside li::after{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    bottom: -1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 5px -5px 2px transparent;
+    right: 0;
+}
+
+.adminContainer aside li.active::before{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: -1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 5px 5px 2px white;
+    right: 0;
+}
+.adminContainer aside li.active::after{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    bottom: -1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 5px -5px 2px white;
+    right: 0;
+}
+
+/* statics */
+.adminContents{
+    width: 85%;
+    height: max-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.adminContents section{
+    width: 90%;
+    height: max-content;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid green; */
+}
+.adminContents section h3{
+    margin-top: 1rem;
+    width: min-content;
+    color: tomato;
+}
+.staticsContainer{
+    max-width: 90%;
+    width: 90%;
+    height: max-content;
+    display: flex;
+    justify-content: left;
+    column-gap: .5rem;
+    overflow: auto;
+    padding: .5rem;
+    /* background-color: ; */
+}
+.adminContents section.active{
+    display: flex;
+}
+
+/* media query */
+@media only screen and (max-width: 600px){
+.adminContainer aside{
+    width: 3.5rem;
+}
+.adminContainer aside li{
+    padding: .1rem .8rem;
+    height: 2.4rem;
+}
+.adminContainer aside li svg{
+    width: 2rem;
+}
+.adminContainer aside li span{
+    display: none;
+}
+}
+
+

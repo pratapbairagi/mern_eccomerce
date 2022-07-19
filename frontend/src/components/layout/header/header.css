@@ -1,0 +1,214 @@
+.header_container {
+    width: 100%;
+    height: 10vh;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 2px grey;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.left_nav {
+    width: 20%;
+    min-width: 70px;
+
+}
+
+.mid_nav {
+    width: 20%;
+    display: none;
+
+}
+
+.right_nav {
+    width: 75%;
+    min-width: 190px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 5px;
+}
+
+
+.right_nav li {
+    width: max-content;
+    cursor: pointer;
+    padding: 5px 15px;
+    font-weight: 550;
+    color: tomato;
+    font-size: 90%;
+    transition: .6s all;
+    border-radius: 30px;
+}
+.right_nav li .headerNavLink{
+    color: tomato;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.right_nav li.active {
+    color: tomato;
+    box-shadow: 0 1px 2px tomato;
+}
+
+.right_nav li:hover {
+    background-color: tomato;
+    color: white;
+}
+.right_nav li:hover .headerNavLink{
+    background-color: tomato;
+    color: white;
+}
+.searchBarContainer{
+    position:fixed;
+    max-height:2rem;
+    width: 70%;
+    min-width:200px;
+    /* width: 80%; */
+    max-width:20rem;
+    top: 11.2vh;
+    right:3rem;
+    background:transparent;
+}
+.searchBarContainer input{
+    position:relative;
+    width:80%;
+    max-width: 80%;
+    min-width: none;
+    height:100%;
+    border-right:none;
+}
+.searchBarContainer button{
+    width:20%; 
+    padding:0 3px;
+    display:grid;
+    place-items:center; 
+    background:white; 
+    border-left:none;
+}
+.searchBarContainer button{
+    fill: tomato;
+    width: 1.6rem;
+}
+
+/* .filterContainer{
+    display: flex; 
+    position: fixed; 
+    z-index: 3; 
+    top: 10.7vh; 
+    left: 0; 
+    width: max-content; 
+    max-width:80%;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    background:white; 
+    padding:.5rem .5rem;
+} */
+
+
+
+
+/*  media query */
+
+/* @media only screen and (max-width: 860px) {
+    .filterContainer{ 
+        height: max-content;
+        position: fixed;
+        bottom: 1%; 
+    }
+} */
+
+@media only screen and (max-width: 600px) {
+    .header_container {
+        height: max-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        left: 0;
+        top: 0;
+        flex-wrap: wrap;
+    }
+
+    .left_nav {
+        width: 80%;
+        min-width: 200px;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .mid_nav {
+        display: flex;
+        min-width: 30px;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+    }
+
+    .right_nav {
+        width: 100%;
+        min-width: 260px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 5px;
+        padding-top: 20%;
+        display: flex;
+    }
+
+    .right_nav li {
+        width: 90%;
+        text-align: center;
+        padding: 5px 10px;
+        font-weight: 550;
+        color: tomato;
+        font-size: 140%;
+        transition: .6s all;
+        row-gap: 8px;
+        margin-top: 2%;
+        font-size: 120%;
+        border-radius: 20px;
+        text-align: left;
+        padding: 3% 0 3% 10%;
+        box-shadow: 0 1px 3px red;
+        /* border:  1px solid red; */
+    }
+    .right_nav li .headerNavLink{
+        color: tomato;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+    }
+    .right_nav li:hover .headerNavLink{
+        background-color: tomato;
+        color: white;
+    }
+    .right_nav li.active {
+        color: white;
+        /* box-shadow: 0 1px 2px tomato; */
+        background-color: tomato;
+    }
+    .right_nav li.active .headerNavLink {
+        color: white;
+        /* box-shadow: 0 1px 2px tomato; */
+        background-color: tomato;
+    }
+    .searchBarContainer{
+        max-height:2rem;
+        width: 90%;
+        min-width:200px;
+        /* width: 80%; */
+        max-width:200px;
+        top: 12vh;
+        right:4rem;
+    }
+}

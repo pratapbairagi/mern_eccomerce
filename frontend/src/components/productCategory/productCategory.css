@@ -1,0 +1,48 @@
+
+.productcategoryContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5px;
+    row-gap: 1rem;
+    /* border: 1px solid tomato; */
+    padding: 3% 0 7% 0;
+    background-image: linear-gradient(to right,white, rgb(246, 211, 205), white);
+}
+.productCategoryHeading{
+    width: 100%;
+    margin-bottom: 3%;
+}
+.productCategoryHeading h2{
+    width: max-content;
+    margin: auto;
+    font-family: fantasy;
+}
+.categoryMen, .categoryWomen, .categoryKid{
+    width: 30%;
+    min-width: 70px;
+    max-width: 10rem;
+    position: relative;
+}
+
+.categoryMen img, .categoryWomen img, .categoryKid img{
+    width: 100%;
+    aspect-ratio: 1/.8;
+    object-fit: cover;
+}
+.menCategoryBtn, .womenCategoryBtn, .kidsCategoryBtn{
+    position: absolute;
+    width: 100%;
+    top:40%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+.menCategoryBtn button, .womenCategoryBtn button, .kidsCategoryBtn button{
+    padding: 2px 6px;
+    width: max-content;
+    border: 1px solid white;
+    color: white;
+    position: relative;
+}

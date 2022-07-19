@@ -1,0 +1,45 @@
+
+.loaderContainer{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    z-index: 5;
+    background-color: white;
+}
+.innerLoaderContainer{
+    position: relative;
+    height: 20vh;
+    width: 20vh;
+    max-width: 20rem;
+    max-height: 20rem;
+    min-width: 10rem;
+    min-height: 10rem;
+    display: grid;
+    place-items: center;
+}
+.innerLoaderContainer::after{
+    content: "LOADING";
+    position: absolute;
+    color: red;
+}
+.loader{
+    width: 90%;
+    aspect-ratio: 1/1;
+    border-top: 2px solid red;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+}
+
+
+@keyframes loader{
+    0% {
+        transform: rotateZ(0) ;
+    }
+    100% {
+        transform: rotateZ(360deg) ;
+    }
+}

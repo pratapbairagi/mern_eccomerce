@@ -1,0 +1,111 @@
+
+.orderConfirmContainer{
+    width:100%;
+     
+    padding:0 4%; 
+    min-height:90vh; 
+    height:max-content; 
+    margin-top:10vh;
+}
+.orderConfirm_subContainer{
+    display:flex;
+    max-width:55rem;
+    flex-wrap:wrap;
+    margin: 0 auto;
+    row-gap:0.4rem;
+    column-gap:2%;
+}
+.colorderConfirm_shippingInfo{
+    border-bottom:1px solid grey;
+    padding:0.5rem 0;
+}
+.colorderConfirm_shippingInfo div{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 0;
+    font-size: 90%;
+}
+.colorderConfirm_shippingInfo div span{
+    /* border: 1px solid red; */
+    color: grey;
+}
+.colorderConfirm_shippingInfo div span:first-child{
+    /* font-size:80%; */
+    min-width: 4rem;
+    font-weight:500;
+    color:grey;
+}
+.orderConfirm_items{
+    border-bottom:1px solid grey;
+    padding:0.5rem 0;
+}
+.orderConfirm_orderItems_container{
+    max-height:45vh;
+    overflow-Y:auto;
+}
+.orderConfirm_orderItems{
+    display:flex; 
+    flex-direction:row; 
+    margin-top:4px; 
+    box-shadow:0 0 2px grey; 
+    margin:4px 5px;
+}
+.orderConfirm_orderItems div{
+    display:grid; 
+    place-items:center; 
+    /* padding:2px 0; */
+}
+.orderConfirm_orderItems div:nth-child(3){
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    column-gap:2px;
+}
+.orderConfirm_orderItems div span{
+    text-align:center;
+    color:grey;
+    width:96%;
+    font-size: 90%;
+}
+.orderConfirm_orderItems div:nth-child(3) span{
+    width: max-content;
+}
+.orderConfirm_orderSummary{
+    box-shadow:0 0 2px rgb(215, 215, 215);
+    padding:0.4rem 1rem;
+}
+.orderConfirm_orderSummary_container{
+    display:flex;
+    flex-direction:column;
+    row-gap:3px;
+    margin-top:1rem;
+}
+.orderConfirm_orderSummary_container div{
+    display:flex;
+    justify-content:space-between;
+}
+.orderConfirm_orderSummary_container div:nth-child(5){
+    border-top:1px solid grey;
+    border-bottom:1px solid grey;
+    margin-top:0.3rem;
+}
+.orderConfirm_orderSummary_container div span:first-child{
+    font-size:90%; 
+    font-weight:500;
+    color:grey;
+}
+.orderConfirm_orderSummary_container div:nth-child(5) span:first-child{
+    font-size:110%;
+    font-weight:500;
+    color:grey;
+}
+.orderConfirm_orderSummary_container button{
+    width:100%;
+    padding:4px;
+    color:tomato;
+    background:white;
+    box-shadow:0 0 3px rgb(205, 205, 205);
+    margin-top:4%;
+    border-radius:9999px;
+    font-weight:500;
+}

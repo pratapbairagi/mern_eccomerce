@@ -1,0 +1,75 @@
+.profileContainer{
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.profileSubContainer{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    column-gap: 8px;
+    row-gap: 1rem;
+}
+.profileDevisionOne{
+    box-shadow: 1px 1px 3px rgb(204, 52, 25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+    max-width: max-content;
+    padding: 1rem 2rem;
+    /* background-image:linear-gradient(to left,white, tomato , rgb(225, 65, 36) ) ; */
+}
+.profileDevisionOne img{
+    width:90%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    max-width:14rem;
+    box-shadow: 1px 1px 3px grey;
+}
+.profileDevisionOne strong{
+    width: 90%;
+    max-width: 14rem;
+    /* background-color: tomato; */
+    color: tomato;
+    padding: 3px;
+    text-align: center;
+    /* background-image: linear-gradient(to left, rgb(225, 65, 36) , tomato ); */
+    text-transform: uppercase;
+    box-shadow: 2px 2px 3px rgb(255,255,255,0.2) inset;
+    border-radius: 5px;
+}
+.profileDevisionTwo {
+    max-width: max-content;
+    min-width: 14rem;
+    padding: 1rem 3rem;
+    box-shadow: 0 0 2px tomato;
+}
+.profileDevisionTwo div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+    /* border: 1px solid red; */
+}
+.profileDevisionTwo div strong{
+    text-align: center;
+    padding: 2px 1rem;
+    word-wrap: break-word;
+    box-shadow: 0 0 2px tomato inset;
+    margin:2px 0;
+}
+.profileDevisionTwo button{
+    background-color: tomato;
+    border-radius: 4px;
+    padding: 2px;
+    font-weight: 500;
+    color: white;
+}
