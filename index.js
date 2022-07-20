@@ -6,7 +6,11 @@ const app = express()
 const fileupload = require("express-fileupload")
 const globalErrorHandler = require("./backend/middleware/globalErrorHandlerMiddleware")
 const MONGO_DB_CONNECTION = require("./backend/config/mongoDbConnection")
+const path = require("path")
 
+if(process.env.NODE_ENV){
+    require("dotenv").config({path:"backend/config/.env"})
+}
 
 // import routes
 const userRoute = require("./backend/routes/userRoute")
@@ -36,6 +40,13 @@ app.use("/api", orderRoute)
 app.use("/api", paymentRoute)
 app.use("/api", productCategoryRoute)
 app.use("/api", messageRoute)
+
+if(process.env.NODE_ENV){
+    app.use(express.static(path.join(__dirname,"../frontend/build")))
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,"../frontend/build/index.html"))
+    })
+}
 
 // global error handler middleware
 app.use(globalErrorHandler)
