@@ -8,7 +8,7 @@ const globalErrorHandler = require("./middleware/globalErrorHandlerMiddleware")
 const MONGO_DB_CONNECTION = require("./config/mongoDbConnection")
 const path = require("path")
 
-if(process.env.NODE_ENV){
+if(process.env.NODE_ENV !== "PRODUCTION"){
     require("dotenv").config({path:"backend/config/.env"})
 }
 
