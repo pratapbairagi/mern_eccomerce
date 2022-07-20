@@ -4,8 +4,8 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 const app = express()
 const fileupload = require("express-fileupload")
-const globalErrorHandler = require("./backend/middleware/globalErrorHandlerMiddleware")
-const MONGO_DB_CONNECTION = require("./backend/config/mongoDbConnection")
+const globalErrorHandler = require("./middleware/globalErrorHandlerMiddleware")
+const MONGO_DB_CONNECTION = require("./config/mongoDbConnection")
 const path = require("path")
 
 if(process.env.NODE_ENV){
@@ -13,12 +13,12 @@ if(process.env.NODE_ENV){
 }
 
 // import routes
-const userRoute = require("./backend/routes/userRoute")
-const productRoute = require("./backend/routes/productRoute")
-const orderRoute = require("./backend/routes/orderRoute")
-const paymentRoute = require("./backend/routes/paymentRoute")
-const productCategoryRoute = require("./backend/routes/productCategoryRoute")
-const messageRoute = require("./backend/routes/messageRoute")
+const userRoute = require("./routes/userRoute")
+const productRoute = require("./routes/productRoute")
+const orderRoute = require("./routes/orderRoute")
+const paymentRoute = require("./routes/paymentRoute")
+const productCategoryRoute = require("./routes/productCategoryRoute")
+const messageRoute = require("./routes/messageRoute")
 
 // env file
 dotenv.config({path:"./backend/config/.env"})
