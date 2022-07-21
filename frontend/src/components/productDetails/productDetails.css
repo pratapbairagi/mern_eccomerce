@@ -243,3 +243,9 @@
 ::-webkit-scrollbar{
     width: 2px;
 }
+
+@media only screen and ( max-width : 600px){
+.productDetails_container{
+    margin-top: 3rem;
+}
+}

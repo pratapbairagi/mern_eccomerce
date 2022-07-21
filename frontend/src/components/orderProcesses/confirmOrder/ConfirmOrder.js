@@ -19,7 +19,7 @@ const OrderConfirm = ({history}) => {
     },[shippingAddress, orderItemsArr])
 
     return(
-        <div className="orderConfirmContainer">
+        <div className="orderConfirmContainer" style={{marginTop:"17vh"}}>
             <div className="progressBar"></div>
 
             <div className="orderConfirm_subContainer">

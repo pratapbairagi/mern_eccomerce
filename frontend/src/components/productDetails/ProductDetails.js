@@ -123,7 +123,7 @@ const ProductDetails = () => {
                             <div className="carousel slide" style={{ width: "100%" }} data-bs-ride="carousel" id="carouselContainer2">
                                 <ol className="carousel-indicators">
                                     {productDetails.images?.map((img, imgIndex) => {
-                                        return <li key={imgIndex} style={{ background: "white", boxShadow: "0 1px 2px red", height: "2px", minHeight: "0", borderRadius: "50%" }} className={`${imgIndex === 0 && "active"}`} data-bs-target="#carouselContainer2" data-bs-slide-to={imgIndex}></li>
+                                        return <li key={imgIndex} style={{ background: "white", boxShadow: "0 1px 2px red", height: "2px", minHeight: "0px", borderRadius: "50%" }} className={`${imgIndex === 0 && "active"}`} data-bs-target="#carouselContainer2" data-bs-slide-to={imgIndex}></li>
                                     })}
                                 </ol>
                                 <div className="carousel-inner">
@@ -211,6 +211,7 @@ const ProductDetails = () => {
 
                     </div>
                     <div className="productDetails_reviewsContainer">
+                        {productDetails.reviews.length === 0 && <h5 style={{width:"100%", textAlign:"center"}}>NO REVIEW YET</h5>  }
                         {productDetails.reviews.map((rev, revInd) => {
                             return <div key={revInd} className="col col-xl-3 col-md-lg-4 col-md-6 col-12 productDetails_reviewContainer" >
                                 

@@ -5,8 +5,6 @@ import { GetAllProducts } from "../../redux/actions/ProductAction"
 import { useEffect } from "react"
 import { ClearProductCategoryError, ClearProductCategorySuccess, GetProductCategoriesAction } from "../../redux/actions/ProductCategoryAction"
 
-let categ = ""
-
 const ProductCategory = () => {
     
     const history = useHistory()
@@ -29,12 +27,11 @@ const ProductCategory = () => {
 
     const menCategoryFilter = (e) =>{
         history.push("/products/")
-        categ = e.target.value
     }
     return (
         <div className="productcategoryContainer">
             <div className="productCategoryHeading">
-                <h2 className="productBestSellingHeading">Cloths Category</h2>
+                <h2 className="productBestSellingHeading">Product Category</h2>
             </div>
 
             {category.length > 0 && category.map((c,i)=>{
@@ -46,32 +43,8 @@ const ProductCategory = () => {
                 </div>
             </div>
             })}
-
-            {/* <div className="categoryMen">
-                <img src={men} alt="" />
-                <div className="menCategoryBtn">
-                    <button value="men" onClick={menCategoryFilter}>MEN</button>
-                </div>
-            </div>
-
-            <div className="categoryWomen">
-                <img src={women} alt="" />
-
-                <div className="womenCategoryBtn">
-                    <button value="women" onClick={menCategoryFilter} >WOMEN</button>
-                </div>
-            </div>
-
-            <div className="categoryKid">
-                <img src={kids} alt="" />
-
-                <div className="kidsCategoryBtn">
-                    <button value="kid" onClick={menCategoryFilter}>KIDS</button>
-                </div>
-            </div> */}
         </div>
     );
 }
 export default ProductCategory;
 
-export {categ}

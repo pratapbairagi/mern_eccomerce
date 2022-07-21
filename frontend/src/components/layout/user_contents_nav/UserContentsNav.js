@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import "./userContentNav.css"
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ClearErrorAction, ClearSuccessAction, UserLogoutAction } from '../../../redux/actions/UserAction';
+import { ClearErrorAction, ClearSuccessAction, UserLoggedAction, UserLogoutAction } from '../../../redux/actions/UserAction';
 import { useAlert } from 'react-alert';
 
 const UserContentsNav = ({ userData }) => {
@@ -40,6 +40,7 @@ const UserContentsNav = ({ userData }) => {
     useEffect(() => {
         if (logoutSuccess) {
             alert.success("User Logged out !", { position: "bottom center" })
+            dispatch(UserLoggedAction())
             dispatch(ClearSuccessAction())
         }
         if (logouterror) {
@@ -94,7 +95,7 @@ const UserContentsNav = ({ userData }) => {
                     }
                 </span>
 
-                {authenticate && user.role === "admin" &&
+                {/* {authenticate && user.role === "admin" &&
                     <span className="userContentIcon">
                         <NavLink className="userContentLink" to="/admin" >
                             <svg style={{ width: "1.3rem", height: "1.5rem", margin: "2px 2px 4px 6px" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -102,7 +103,7 @@ const UserContentsNav = ({ userData }) => {
                             </svg>
                         </NavLink>
                     </span>
-                }
+                } */}
 
                 {authenticate &&
                     <>

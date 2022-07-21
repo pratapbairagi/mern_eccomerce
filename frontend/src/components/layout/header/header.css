@@ -5,7 +5,7 @@
     top: 0;
     box-shadow: 0 0 2px grey;
     position: fixed;
-    z-index: 999;
+    z-index: 99999;
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -16,7 +16,6 @@
 .left_nav {
     width: 20%;
     min-width: 70px;
-
 }
 
 .mid_nav {
@@ -99,49 +98,27 @@
     width: 1.6rem;
 }
 
-/* .filterContainer{
-    display: flex; 
-    position: fixed; 
-    z-index: 3; 
-    top: 10.7vh; 
-    left: 0; 
-    width: max-content; 
-    max-width:80%;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    background:white; 
-    padding:.5rem .5rem;
-} */
-
-
-
-
-/*  media query */
-
-/* @media only screen and (max-width: 860px) {
-    .filterContainer{ 
-        height: max-content;
-        position: fixed;
-        bottom: 1%; 
-    }
-} */
-
 @media only screen and (max-width: 600px) {
     .header_container {
         height: max-content;
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
+        height: 7vh;
         left: 0;
         top: 0;
+        padding: .4rem;
         flex-wrap: wrap;
+        /* border: 1px solid red; */
+
     }
 
     .left_nav {
         width: 80%;
         min-width: 200px;
-        height: 10vh;
+        height: 7vh;
         display: flex;
+        /* border: 1px solid red; */
         align-items: center;
     }
 
@@ -150,7 +127,8 @@
         min-width: 30px;
         align-items: center;
         justify-content: center;
-        height: 10vh;
+        height: 7vh;
+        /* border: 1px solid red; */
     }
 
     .right_nav {
@@ -162,6 +140,8 @@
         column-gap: 5px;
         padding-top: 20%;
         display: flex;
+        /* margin-top: 5%; */
+        /* border: 1px solid red; */
     }
 
     .right_nav li {
@@ -170,10 +150,10 @@
         padding: 5px 10px;
         font-weight: 550;
         color: tomato;
-        font-size: 140%;
+        font-size: 100%;
         transition: .6s all;
         row-gap: 8px;
-        margin-top: 2%;
+        margin-top: 3%;
         font-size: 120%;
         border-radius: 20px;
         text-align: left;

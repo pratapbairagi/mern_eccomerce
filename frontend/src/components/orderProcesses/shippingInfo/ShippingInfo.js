@@ -44,7 +44,7 @@ const ShippingInfo = ({history}) =>{
         }
     }
     return(
-        <div className="shippingInfo_container" style={{width:"100%", minHeight:"90vh", marginTop:"10vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+        <div className="shippingInfo_container" style={{width:"100%", minHeight:"90vh", marginTop:"17vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
             <form onSubmit={submitSippingInfoHandler} className="shippingInfoForm" style={{maxWidth:"30rem", width:"90%", display:"flex", marginTop:".4rem", flexDirection:"column", alignItems:"center", justifyContent:"center", rowGap:"8px", boxShadow:"0 1px 4px rgba(151, 151, 151, 0.418)", borderRadius:"6px", padding:"1.5rem 2.5rem", background:"white" }}>
             <h4 style={{borderBottom:"2px solid tomato", color:"tomato"}}>SHIPPING INFO</h4>
                 <label htmlFor="" style={{width:"100%", position:"relative"}}>

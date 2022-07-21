@@ -62,25 +62,12 @@ const Header = ({user}) => {
     }
 
 
-
-    // const [category, setCategory] = useState("")
     const [keyword, setKeyword] = useState("")
     const price = {
             from: 0,
             to: 999999
         }
 
-    // const cat = [
-    //     {
-    //         category: "men"
-    //     },
-    //     {
-    //         category: "women"
-    //     },
-    //     {
-    //         category: "kid"
-    //     }
-    // ]
 
     const submitSearchProduct_handler = (e) =>{
         e.preventDefault()
@@ -100,19 +87,6 @@ const Header = ({user}) => {
     const { loading, success, error, products, totalProducts, resultPerPage, resultFound } = useSelector(state => state.getProducts)
 
     const dispatch = useDispatch()
-    // let [page, setPage] = useState(1)
-    // let totalPages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    // let round = Math.round(totalProducts / resultPerPage)
-    // totalPages.length = round ? round : 20
-
-    // const selectPage_handler = (e) => {
-    //     setPage(e.target.value)
-    // }
-
-    // const submitPriceRange_handler = (e) => {
-    //     e.preventDefault()
-    //     dispatch(GetAllProducts(keyword, category, price))
-    // }
 
     useEffect(() => {
         dispatch(GetAllProducts(keyword, "", "", "",""))
@@ -123,7 +97,9 @@ const Header = ({user}) => {
             <div className='header_container'>
                 <div className="left_nav">
                     <button>
+                        <NavLink to="/">
                         <img style={{ width: "2.5rem", height: "2.5rem", borderRadius: "50%", boxShadow: "0 0 2px grey" }} src={ brandLogo } alt="" />
+                        </NavLink>
                     </button>
 
                 </div>

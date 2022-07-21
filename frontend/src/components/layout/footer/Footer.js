@@ -5,6 +5,7 @@ import { GetAllUsersAction } from "../../../redux/actions/UserAction";
 import {useAlert} from "react-alert"
 
 import "./footer.css"
+import { NavLink } from "react-router-dom";
 const Footer = () => {
 
     const dispatch = useDispatch()
@@ -137,16 +138,33 @@ const Footer = () => {
                 <div className="aboutLinks_container" >
                     <div className="aboutLinks_heading">Direct Links</div>
                     <div style={{ width: "max-content", display: "flex", columnGap: ".5rem" }}>
-                        <span style={{ width: "4rem" }}>Home</span>
+                        <span style={{ width: "4rem" }}>
+                            <NavLink style={{textDecoration:"none", color:"grey"}} to="/">
+                            Home
+                            </NavLink>
+                            </span>
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>PRODUCTS</span>
+                        <span style={{ width: "4rem" }}>
+                        <NavLink style={{textDecoration:"none", color:"grey"}} to="/products/">
+                            PRODUCTS
+                            </NavLink>
+                            </span>
+                            
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>ABOUT</span>
+                        <span style={{ width: "4rem" }}>
+                        <NavLink style={{textDecoration:"none", color:"grey"}} to="/about">
+                            ABOUT
+                            </NavLink>
+                            </span>
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>CONTACT</span>
+                        <span style={{ width: "4rem" }}>
+                            <NavLink style={{textDecoration:"none", color:"grey"}} to="/" >
+                            CONTACT
+                            </NavLink>
+                            </span>
                     </div>
                 </div>
 
@@ -154,24 +172,32 @@ const Footer = () => {
                 <div className="aboutSocial_container">
                     <div className="aboutSocial_heading">Our Social Media</div>
                     <div style={{ width: "max-content", display: "flex", columnGap: ".5rem" }}>
-                        <span style={{ width: "4rem" }}>Facebook</span>
-                        <span style={{ width: "8rem" }}>+011 9876543</span>
+                        {/* <span style={{ width: "4rem" }}>Facebook</span> */}
+                        {/* <span style={{ width: "8rem" }}  >Pratap</span> */}
+                        <a style={{ textDecoration:"none", color:"grey" }} href="https://www.facebook.com/pratap.bairagi">Facebook</a>
+
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>Twitter</span>
-                        <span style={{ width: "8rem" }}>+022 9876543</span>
+                        {/* <span style={{ width: "4rem" }}>Twitter</span>
+                        <span style={{ width: "8rem" }}>+022 9876543</span> */}
+                        <a style={{ textDecoration:"none", color:"grey" }} href="https://www.facebook.com/pratap.bairagi">Twitter</a>
+
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>Instagram</span>
-                        <span style={{ width: "8rem" }}>+033 9876543</span>
+                        {/* <span style={{ width: "4rem" }}>Instagram</span>
+                        <span style={{ width: "8rem" }}>+033 9876543</span> */}
+                        <a style={{ textDecoration:"none", color:"grey" }} href="https://www.instagram.com/its_protap">Instagram</a>
+
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>LinkedIn</span>
-                        <span style={{ width: "8rem" }}>+044 9876543</span>
+                        {/* <span style={{ width: "4rem" }}>LinkedIn</span>
+                        <span style={{ width: "8rem" }}>+044 9876543</span> */}
+                        <a style={{ textDecoration:"none", color:"grey" }} href="https://www.facebook.com/pratap.bairagi">LinkedIn</a>
+
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
-                        <span style={{ width: "4rem" }}>WhatsApp</span>
-                        <span style={{ width: "8rem" }}>+044 9876543210</span>
+                        {/* <span style={{ width: "4rem" }}>WhatsApp</span> */}
+                        <a style={{ textDecoration:"none", color:"grey" }} href="https://wa.me/8287889123">WhatsApp</a>
                     </div>
                 </div>
 

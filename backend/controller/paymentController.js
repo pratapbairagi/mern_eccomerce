@@ -10,7 +10,8 @@ exports.getStripeKey =  asyncCatchError(async(req,res,next)=>{
     res.status(200).json({
         success: true,
         message: "stripe key fetched successfully !",
-        stripeKey : process.env.STRIPE_API_PUBLISH_TOKEN
+        // stripeKey : process.env.STRIPE_API_PUBLISH_TOKEN
+        stripeKey : "pk_test_51Kyc5BSAAbMphS3MOzZANBnnUw5jPuUCq27epYM3H1boI0ZE5dWx6m7xuIQNkEqN1E6dHyp2YDhiTX70QgbJ7G4300GffYzTUM"
     })
 })
 
