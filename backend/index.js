@@ -21,7 +21,7 @@ const productCategoryRoute = require("./routes/productCategoryRoute")
 const messageRoute = require("./routes/messageRoute")
 
 // env file
-dotenv.config({path:"./backend/config/.env"})
+// dotenv.config({path:"backend/config/.env"})
 
 
 
@@ -52,7 +52,9 @@ if(process.env.NODE_ENV){
 app.use(globalErrorHandler)
 
 // mongo db connection call
-MONGO_DB_CONNECTION(process.env.MONGO_DB_CONNECTION_URL)
+// MONGO_DB_CONNECTION(process.env.MONGO_DB_CONNECTION_URL)
+MONGO_DB_CONNECTION()
+
 
 app.listen(process.env.PORT, ()=>{
     console.log(`server started on http://localhost:${process.env.PORT}`)
