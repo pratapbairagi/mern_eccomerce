@@ -12,16 +12,6 @@ exports.getAllProducts = asyncCatchHandler(async(req,res,next)=>{
 
     const skip = resultPerPage * Number(currentPage - 1)
 
-    // let query = {}
-
-    // if(req.query.keyword){
-    //     query.name = req.query.keyword
-    // }
-    // if(req.query.category){
-    //     query.category = req.query.category
-    // }
-
-
     const query = {
         name:{
             $regex: req.query.keyword,
@@ -51,6 +41,10 @@ exports.getAllProducts = asyncCatchHandler(async(req,res,next)=>{
         "sold" : -1
     }
 
+    const offer = {
+        "offer.avail" : "yes"
+    }
+
 
     // let products = req.query.keyword.length > 0 ? await Product.find({ name:{$regex: new RegExp(req.query.keyword)} }).limit(resultPerPage).skip(skip) : await Product.find().limit(resultPerPage).skip(skip)
     let products = await Product.find(query).sort(sort).limit(resultPerPage).skip(skip)
@@ -59,7 +53,8 @@ exports.getAllProducts = asyncCatchHandler(async(req,res,next)=>{
 
     let topSellingProducts = await Product.find(query).sort(sellSort).limit(5).skip(skip)
 
-    
+    let offerProducts = await Product.find({"offer.avail" : "yes"}).sort(sellSort).limit(5).skip(skip)
+
     const resultFound = products.length
 
     if(!products){
@@ -74,7 +69,8 @@ exports.getAllProducts = asyncCatchHandler(async(req,res,next)=>{
         resultPerPage, 
         resultFound,
         latestProducts,
-        topSellingProducts
+        topSellingProducts,
+        offerProducts
     })
 })
 
@@ -132,7 +128,9 @@ exports.createProduct = asyncCatchHandler(async(req, res, next)=>{
 // update product
 exports.updateProduct = asyncCatchHandler(async(req,res, next)=>{
     const productId = req.params.id
-    const {name, category, description, price, stock, oldImages, newImages} = req.body
+    const {name, category, description, price, stock, oldImages, newImages, offerAvail, offerPercentage} = req.body
+
+    console.log(offerAvail)
 
     const product = await Product.findById(productId)
 
@@ -165,15 +163,23 @@ exports.updateProduct = asyncCatchHandler(async(req,res, next)=>{
         imgaesLink = await oldImages
     }
 
-     await Product.findByIdAndUpdate({_id:productId}, {name,category, price,description, stock, images:imgaesLink }, {new: true} )
+     await Product.findByIdAndUpdate({_id:productId}, { 
+        name,
+        category, 
+        price,
+        description, 
+        stock, 
+        images:imgaesLink,
+        offer :{
+            avail : offerAvail,
+            percentage : offerPercentage
+        }
+     }, {new: true} )
 
      res.status(200).json({
          success : true,
          message : "Product updated successfully !"
      })
-
-
-
     
 })
 

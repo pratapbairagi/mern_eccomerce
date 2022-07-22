@@ -2,8 +2,6 @@ const User = require("../models/userModel")
 const ErrorHandler = require("../utils/errorHandler")
 const asyncCatchHandler = require("../utils/asyncCatchError")
 const cloudinary = require("../config/cloudinaryConfig")
-const { required } = require("nodemon/lib/config")
-const nodeMailer = require("nodemailer")
 const sendMail = require("../config/mailConfig")
 const crypto = require("crypto")
 
@@ -266,7 +264,6 @@ exports.updateUserRole = asyncCatchHandler(async(req,res,next)=>{
 // user delete by admin
 exports.userDeleteByAdmin = asyncCatchHandler(async(req, res, next)=>{
     const id = req.params.id
-    console.log(id)
     const user = await User.findById(id)
 
     if(!user){
@@ -296,8 +293,8 @@ exports.passwordRecoveryMail = asyncCatchHandler(async(req, res, next)=>{
 
     await user.save({validateBeforeSave:false})
 
-    // const mailLink = `${req.protocol}://${req.get("host")}/password/reset/${token}`
-    const mailLink = `${req.protocol}://localhost:3000/password/reset/${token}`
+    const mailLink = `${req.protocol}://${req.get("host")}/password/reset/${token}`
+    // const mailLink = `${req.protocol}://localhost:3000/password/reset/${token}`
 
     const message = `websitename : Your reset password link is \n\n  ${mailLink} \n\nIf you are not requested this mail then, please ignore it !`
 
@@ -314,7 +311,6 @@ exports.passwordRecoveryMail = asyncCatchHandler(async(req, res, next)=>{
     })
         
     } catch (error) {
-        console.log("error", error)
         user.resetPasswordToken = undefined
         user.resetPasswordTokenExpiry = undefined
 

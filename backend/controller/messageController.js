@@ -60,8 +60,6 @@ exports.sendMessageByUser = asyncCatchError(async(req, res, next)=>{
 // get all messages
 exports.getAllMessages = asyncCatchError(async(req, res, next)=>{
 
-    console.log(req.params.id)
-
     // const sellerMessages = await Message.find({"seller._id":req.params.id})
     const sellerMessages = await Message.find({"seller.id": req.params.id})
 

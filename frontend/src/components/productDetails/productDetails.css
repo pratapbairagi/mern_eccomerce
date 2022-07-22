@@ -59,7 +59,7 @@
 .productDetails_cartBtns{
     width: 100%;
     display: flex;
-    margin: 2% 0;
+    margin: 3% 0;
     /* border: 1px solid red; */
     justify-content: space-between;
 }

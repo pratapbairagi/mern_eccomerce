@@ -25,7 +25,8 @@ export const GetAllProductsReducer = (
                 resultPerPage : action.payload.resultPerPage,
                 resultFound : action.payload.resultFound,
                 latestProducts : action.payload.latestProducts,
-                topSellingProducts : action.payload.topSellingProducts
+                topSellingProducts : action.payload.topSellingProducts,
+                offerProducts : action.payload.offerProducts
             }
         case GET_ALL_PRODUCTS_FAIL:
             return {

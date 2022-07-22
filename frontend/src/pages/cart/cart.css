@@ -9,7 +9,8 @@
     /* align-items: center; */
     justify-content: center;
     margin: 0 auto;
-    padding-top: 3vh;
+    margin-top: 17vh;
+    /* padding-top: 12vh; */
 }
 
 h3 {
@@ -169,6 +170,10 @@ h3 {
 .cartItemTotal {
     /* width: 20%; */
     padding: 3.5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
     /* border: 1px solid red; */
 }
 
@@ -256,7 +261,7 @@ h3 {
         width: 100%;
         /* max-width: none;
         padding: 0; */
-        margin-top: 10vh;
+        /* margin-top: 10vh; */
         align-items: center;
         max-width: none;
     max-height: none;

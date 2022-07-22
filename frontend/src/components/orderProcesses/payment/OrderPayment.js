@@ -28,7 +28,6 @@ const OrderPayment = () => {
         totalPrice: savedOrderItems ? JSON.parse(savedOrderItems).total : 0
     }
 
-
     const paymentSubmit = async (e) => {
         e.preventDefault()
 

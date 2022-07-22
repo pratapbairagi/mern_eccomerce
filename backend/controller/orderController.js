@@ -52,8 +52,6 @@ exports.getAllOrder = asyncCatchError(async(req,res,next)=>{
 
 exports.getUserOrders = asyncCatchError(async(req,res,next)=>{
 
-    console.log()
-
     const orders = await Order.find({user:req.user._id})
 
     if(!orders){
@@ -87,9 +85,6 @@ exports.updateOrder = asyncCatchError(async(req, res, next)=>{
         return next(new errorHandler(`this product ${foundProduct.name} already been delivered !`, 400))
     }
 
-    // if(order.status==="delivered"){
-    //     return next(new errorHandler("order already delivered !", 400))
-    // }
     const product = await Product.findById(productId)
 
     if(foundProduct.orderStatus==="shipped"){
@@ -112,21 +107,6 @@ exports.updateOrder = asyncCatchError(async(req, res, next)=>{
     }
     
     await order.save({validateBeforeSave:false})
-
-
-    // if(order.orderStatus==="shipped"){
-    //     order.orderItems.forEach(async (o,i)=>{
-    //         await changeOrderStatusFun(o.product, o.quantity, o.orderStatus)
-    //     })
-    // }
-
-    // order.orderStatus = orderStatus
-
-    // if(order.orderStatus==="delivered"){
-    //     order.deliveredAt = Date.now()
-    // }
-
-    // await order.save({validateBeforeSave: false})
 
     res.status(200).json({
         success: true,

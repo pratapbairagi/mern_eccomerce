@@ -55,11 +55,11 @@ const OrderConfirm = ({history}) => {
                             <div className="col col-3 orderConfirm_orderItem_itemPrice">
                                 <span >{item.quantity}</span>
                                 <span > X </span>
-                                <span >{item.price}</span>
+                                <span >{item.offer.avail === "yes" ? (item.price) - (item.price)*(item.offer.percentage/100) : item.price}</span>
 
                             </div>
                             <div className="col col-2 orderConfirm_orderItem_itemsQty" >
-                                <span>{(item.price*item.quantity)}</span>
+                                <span>{item.offer.avail === "yes" ? item.quantity*((item.price) - (item.price)*(item.offer.percentage/100)) : (item.price*item.quantity)}</span>
                             </div>
 
                         </div>

@@ -147,6 +147,11 @@ const ProductDetails = () => {
 
                             <div className="productDetails_name">{productDetails.name}</div>
                             <div className="productDetails_category">{productDetails.category}</div>
+                            <div className="" style={{width:"max-content", padding:"0 5px", borderTop:"1px solid red", borderBottom:"1px solid red", color:"grey", textDecoration:`${productDetails.offer.avail === "yes" ? "line-through" : "none"}`}}>₹ {productDetails.price}/-</div>
+                            {productDetails.offer.avail === "yes" &&
+                            <div className="" style={{width:"max-content", padding:"0 8px", marginTop:"3px", background:"linear-gradient(to right, red, tomato, tomato)", color:"white", fontWeight:"600", borderRadius:"4px", borderTopLeftRadius:"0"}}> NEW ₹ {productDetails.offer.avail === "yes" && (productDetails.price)- (productDetails.price)*(productDetails.offer.percentage/100)}/-</div>
+                                }
+
                             <div className="productDetails_cartBtns">
                                 {carItemtQtyNo > 0 ?
                                     <div className="productDetails_cartQtyBtns">

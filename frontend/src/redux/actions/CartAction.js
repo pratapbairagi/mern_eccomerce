@@ -8,6 +8,8 @@ import { ADD_TO_CART_FAIL, ADD_TO_CART_REQUEST, ADD_TO_CART_SUCCESS, ADJUST_CART
             })
             const {data} = await axios.get(`/api/v1/product/${id}`)
 
+            console.log(data)
+
             dispatch({
                 type : ADD_TO_CART_SUCCESS,
                 payload : {
@@ -17,6 +19,7 @@ import { ADD_TO_CART_FAIL, ADD_TO_CART_REQUEST, ADD_TO_CART_SUCCESS, ADJUST_CART
                     description : data.product.description,
                     price : data.product.price,
                     images : data.product.images,
+                    offer : data.product.offer,
                     quantity : 1,
                 }
             })

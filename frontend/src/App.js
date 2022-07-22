@@ -90,6 +90,12 @@ function App() {
     <BrowserRouter>
       <Header user={authenticate ? user : null} />
 
+      {
+          stripeKey && (<Elements stripe={loadStripe(stripeKey)} >
+            <ProtectedRoute exact path="/order/payment" auth={auth2} component={OrderPayment} />
+          </Elements>)
+        }
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/product/view/:id" component={ProductDetails} />
@@ -129,11 +135,7 @@ function App() {
         
 
 
-        {
-          stripeKey && (<Elements stripe={loadStripe(stripeKey)} >
-            <ProtectedRoute exact path="/order/payment" auth={auth2} component={OrderPayment} />
-          </Elements>)
-        }
+        
       
       </Switch>
       <Footer/>

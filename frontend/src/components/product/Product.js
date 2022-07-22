@@ -52,7 +52,12 @@ const Product = ({ values }) => {
 
     return (
         <div className="cardContainer">
-           
+            {values?.offer.avail === "yes" &&
+                <div className="offer" style={{ position: "absolute", zIndex: "1", top: "-4px", left: "-17px", transform: "rotateZ(-45deg)", fontSize: "60%", width: "52px", display: "grid", placeItems: "center", height: "26px", lineHeight: "30px", background: "tomato", color: "white", fontWeight: "600", clipPath: "polygon(50% 0, 100% 100%, 0 100%)" }}>
+                    {values?.offer.avail === "yes" && values?.offer.percentage}%
+                </div>
+            }
+
             <div onClick={() => history.push(`/product/view/${values?._id}`)} className="cardImageContainer">
                 <img src={values?.images[0].url} alt="" />
             </div>
