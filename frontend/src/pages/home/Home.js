@@ -5,10 +5,6 @@ import ProductFeatured from "../../components/productFeatured/ProductFeatured"
 import ProductHeighestReviews from "../../components/ProductHighestReviews/ProductOffer"
 import ProductLatest from "../../components/ProductLatest/ProductLatest"
 import "./home.css"
-import cloths from "./images/cloths.png"
-import shirtRack from "./images/clothing-rack-with-floral-hawaiian-shirts-hangers-hat.jpg"
-import veg from "./images/colorful-veggies-frame-with-copy-space.jpg"
-import shirts from "./images/hawaiian-shirts-with-floral-print-hangers.jpg"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { useAlert } from "react-alert"
@@ -42,9 +38,6 @@ const Home = () => {
         dispatch(GetAllProducts("","",price))
     },[alert, dispatch, success, error])
 
-    console.log(banners)
-
-    
     return (
         <div className="homeContainer">
             
@@ -70,7 +63,8 @@ const Home = () => {
                             <img src={bnnr.image.url} alt="" />
 
                                 <div className="bannerPara" >
-                                <p >{bnnr.paragraph}</p>
+                                    <h1 style={{width:"max-content", fontSize:"300%", marginLeft:".5rem", color:`${bnnr.categoryColor}`}}>{bnnr.category}</h1>
+                                <p style={{color:`${bnnr.paragraphColor}`}}>{bnnr.paragraph}</p>
 
                                     <div className="homeBannerBtnsContainer" >
                                         <button >Shop Now</button>

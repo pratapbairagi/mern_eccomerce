@@ -6,7 +6,7 @@ const HomeBanner = require("../models/homeBannerModel")
 exports.createHomeBanner = asyncCatchError(async(req, res, next)=>{
     const user = req.user
 
-    const {paragraph, category, image} = req.body
+    const {paragraph, category, image, paragraphColor, categoryColor} = req.body
 
     if(!paragraph && !category && !image){
         return next( new ErrorHandler("All fields are required !"))
@@ -28,6 +28,8 @@ exports.createHomeBanner = asyncCatchError(async(req, res, next)=>{
             public_id: result.public_id,
             url : result.secure_url
         },
+        paragraphColor : paragraphColor,
+        categoryColor : categoryColor,
         createdAt: Date.now()
     })
 
@@ -69,7 +71,8 @@ exports.editBanner = asyncCatchError(async(req,res, next)=>{
         return next(new ErrorHandler("Banner does not exist !", 404))
     }
 
-    const {paragraph, category, image} = req.body
+    const {paragraph, category, image, paragraphColor, categoryColor} = req.body
+
 
     if(!paragraph && !category){
         return next( new ErrorHandler("All fields are required !", 400))
@@ -78,7 +81,11 @@ exports.editBanner = asyncCatchError(async(req,res, next)=>{
     if(image.includes("https://res.cloudinary.com/protapbairagi")){
 
         isBannerExist.paragraph = paragraph
+        isBannerExist.paragraphColor = paragraphColor
+
         isBannerExist.category = category
+        isBannerExist.categoryColor = categoryColor
+
         
     }
     else{
@@ -90,7 +97,10 @@ exports.editBanner = asyncCatchError(async(req,res, next)=>{
         })
 
         isBannerExist.paragraph = paragraph
+        isBannerExist.paragraphColor = paragraphColor
         isBannerExist.category = category
+        isBannerExist.categoryColor = categoryColor
+
         isBannerExist.image = {
             public_id : result.public_id,
             url : result.secure_url

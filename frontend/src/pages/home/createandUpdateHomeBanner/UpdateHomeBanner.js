@@ -14,7 +14,9 @@ const UpdateHomeBanner = () => {
 
     const [updateBanner, setUpdateBanner] = useState({
         paragraph: "",
+        paragraphColor: "",
         category: "",
+        categoryColor: "",
         image: ""
     })
 
@@ -24,7 +26,9 @@ const UpdateHomeBanner = () => {
             await axios.get(`/api/v1/admin/banner/${id}`).then((res)=>{
                 setUpdateBanner({
                     paragraph: res.data.banner.paragraph,
+                    paragraphColor: res.data.banner.paragraphColor,
                     category : res.data.banner.category,
+                    categoryColor : res.data.banner.categoryColor,
                     image: res.data.banner.image.url
                 })
                 
@@ -74,11 +78,14 @@ const UpdateHomeBanner = () => {
             <form onSubmit={submitUpdateBannerHandler} className='productCreate_form' action="">
 
                 <label htmlFor="nameInput" className=' productCreate_input_label' >
-                    <input defaultValue={updateBanner.category} onChange={UpdateHomeBannerInputChangeHandler} className='productCreate_input' placeholder='Banner Paragraph...' type="text" name="category" id="nameInput" />
+                    <input defaultValue={updateBanner.category} onChange={UpdateHomeBannerInputChangeHandler} style={{width:"65%"}} className='productCreate_input' placeholder='Banner Heading...' type="text" name="category" id="nameInput" />
+                    <input defaultValue={updateBanner.categoryColor} style={{width:"3rem"}} onChange={UpdateHomeBannerInputChangeHandler} className='productCreate_input' placeholder='Banner Heading Color...' type="color" name="categoryColor" id="nameInput" />
                 </label>
 
-                <label htmlFor="nameInput" className=' productCreate_input_label' >
-                    <textarea rows="10" defaultValue={updateBanner.paragraph} onChange={UpdateHomeBannerInputChangeHandler} className='productCreate_input' placeholder='Banner Category Heading...' type="text" name="paragraph" id="nameInput" style={{height:"max-content"}} ></textarea>
+                <label htmlFor="nameInput" className=' productCreate_input_label' style={{display:"flex", flexDirection:"column"}} >
+                    <textarea rows="10" defaultValue={updateBanner.paragraph} onChange={UpdateHomeBannerInputChangeHandler} className='productCreate_input' placeholder='Banner paragraph...' type="text" name="paragraph" id="nameInput" style={{height:"max-content"}} ></textarea>
+                    <input rows="10" defaultValue={updateBanner.paragraphColor} style={{width:"80%"}} onChange={UpdateHomeBannerInputChangeHandler} className='productCreate_input' placeholder='Banner Paragraph Heading Color...' type="color" name="paragraphColor" id="nameInput" />
+
                 </label>
 
 

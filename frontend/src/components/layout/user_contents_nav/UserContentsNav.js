@@ -16,6 +16,10 @@ const UserContentsNav = ({ userData }) => {
 
     // user contents toggling
     const userContentsToggleFun = () => {
+        document.getElementById("searchInput").style.display==="none" ? 
+        document.getElementById("searchInput").style.display = "flex" :
+        document.getElementById("searchInput").style.display="none"
+
         const userContents_container = document.querySelector(".userContents_container")
         const userContents_icons = document.querySelectorAll(".userContents_container span")
         if (!userContents_container.className.includes("active")) {

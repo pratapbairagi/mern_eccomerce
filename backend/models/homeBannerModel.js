@@ -5,9 +5,17 @@ const homeBannerSchema = new mongoose.Schema({
         type:String,
         require : [true, "please fill banner paragraph !"]
     },
+    paragraphColor:{
+        type:String,
+        default : "black"
+    },
     category:{
         type:String,
         required : [true, "please fill category of product for banner !"]
+    },
+    categoryColor:{
+        type:String,
+        default : "black"
     },
     image:{
         public_id:{

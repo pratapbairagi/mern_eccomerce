@@ -122,7 +122,7 @@ const Header = ({user}) => {
 
                 <UserContentsNav userData={user === null ? null : user }/>
 
-                <form onSubmit={submitSearchProduct_handler} className="input-group searchBarContainer" style={{position:"fixed"}}>
+                <form id="searchInput" onSubmit={submitSearchProduct_handler} className="input-group searchBarContainer" style={{position:"fixed", display:"none"}}>
                     <input onChange={(e)=>setKeyword(e.target.value)} className="form-control" type="search" name="" id="" />
                     <button type="submit" className="input-group-text">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

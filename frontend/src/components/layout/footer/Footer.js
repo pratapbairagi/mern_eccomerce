@@ -154,7 +154,7 @@ const Footer = () => {
                     </div>
                     <div style={{ width: "max-content", display: "flex" }}>
                         <span style={{ width: "4rem" }}>
-                        <NavLink style={{textDecoration:"none", color:"grey"}} to="/about">
+                        <NavLink style={{textDecoration:"none", color:"grey"}} to="/about/more">
                             ABOUT
                             </NavLink>
                             </span>
