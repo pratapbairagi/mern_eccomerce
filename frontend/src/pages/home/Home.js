@@ -19,33 +19,33 @@ const Home = () => {
 
     const alert = useAlert()
     const dispatch = useDispatch()
-    const {loading, success, error, products, latestProducts, topSellingProducts, offerProducts} = useSelector(state=>state.getProducts)
-    const {loading:bannerLoading, success:bannerSuccess, error:bannerError, banners } = useSelector(state=>state.homeBanners)
+    const { loading, success, error, products, latestProducts, topSellingProducts, offerProducts } = useSelector(state => state.getProducts)
+    const { loading: bannerLoading, success: bannerSuccess, error: bannerError, banners } = useSelector(state => state.homeBanners)
 
 
 
-    const price ={
-        from :0,
-        to:999999
+    const price = {
+        from: 0,
+        to: 999999
     }
-    useEffect(()=>{
-        if(success){
+    useEffect(() => {
+        if (success) {
             dispatch(ClearError())
         }
-        if(error){
+        if (error) {
             dispatch(ClearSuccess())
         }
-        dispatch(GetAllProducts("","",price))
-    },[alert, dispatch, success, error])
+        dispatch(GetAllProducts("", "", price))
+    }, [alert, dispatch, success, error])
 
     return (
         <div className="homeContainer">
-            
+
             <div className="homeBannerContainer">
                 <div className="carousel slide" data-bs-ride="carousel" id="carouselContainer">
                     <ol className="carousel-indicators" >
-                        { banners?.map((bnnr, bnnrI)=>{
-                           return <li className={`${bnnrI === 0 ? "active":""}`} key={bnnrI} data-bs-target="#carouselContainer" data-bs-slide-to={bnnrI}></li>
+                        {banners?.map((bnnr, bnnrI) => {
+                            return <li className={`${bnnrI === 0 ? "active" : ""}`} key={bnnrI} data-bs-target="#carouselContainer" data-bs-slide-to={bnnrI}></li>
                         })}
 
                         {/* <li className="active" data-bs-target="#carouselContainer" data-bs-slide-to={0}></li>
@@ -56,15 +56,15 @@ const Home = () => {
                     <div className="carousel-inner">
 
                         {/* <div className="carousel-item active" style={{border:"1px solid red", display:"flex", backfaceVisibility:"visible"}}> */}
-                        { banners?.map((bnnr, bnnrI)=>{
+                        {banners?.map((bnnr, bnnrI) => {
 
-                       return <div key={bnnrI} className={`carousel-item ${bnnrI === 0 ? "active":""}`}>
+                            return <div key={bnnrI} className={`carousel-item ${bnnrI === 0 ? "active" : ""}`}>
 
-                            <img src={bnnr.image.url} alt="" />
+                                <img src={bnnr.image.url} alt="" />
 
                                 <div className="bannerPara" >
-                                    <h1 style={{width:"max-content", fontSize:"300%", marginLeft:".5rem", color:`${bnnr.categoryColor}`}}>{bnnr.category}</h1>
-                                <p style={{color:`${bnnr.paragraphColor}`}}>{bnnr.paragraph}</p>
+                                    <h1 style={{ width: "max-content", marginLeft: ".5rem", color: `${bnnr.categoryColor}` }}>{bnnr.category}</h1>
+                                    <p style={{ color: `${bnnr.paragraphColor}` }}>{bnnr.paragraph}</p>
 
                                     <div className="homeBannerBtnsContainer" >
                                         <button >Shop Now</button>
@@ -72,8 +72,8 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                        </div>
-                    })}
+                            </div>
+                        })}
 
                         {/* <div className="carousel-item">
                             <img src={veg} alt="" />
@@ -82,31 +82,31 @@ const Home = () => {
                         <div className="carousel-item">
                             <img src={shirts} alt="" />
                         </div> */}
-                        
+
                     </div>
 
-                    <a href="#carouselContainer" style={{position:"absolute", zIndex:"3"}} data-bs-slide="prev" role="button" className="carousel-control-prev">
+                    <a href="#carouselContainer" style={{ position: "absolute", zIndex: "3" }} data-bs-slide="prev" role="button" className="carousel-control-prev">
                         <span className="carousel-control-prev-icon"></span>
                     </a>
-                    <a href="#carouselContainer" style={{position:"absolute", zIndex:"3"}} data-bs-slide="next" role="button" className="carousel-control-next">
+                    <a href="#carouselContainer" style={{ position: "absolute", zIndex: "3" }} data-bs-slide="next" role="button" className="carousel-control-next">
                         <span className="carousel-control-next-icon"></span>
                     </a>
 
                 </div>
             </div>
 
-            {loading ? <Loader/> :
-            <div className="productsContainer">
-            <ProductCategory />
-            <ProductFeatured products={products}/>
-            <ProductLatest products={latestProducts}/>
-            <ProductBestSelling products={topSellingProducts} />
-            <ProductOffer products={offerProducts} />
+            {loading ? <Loader /> :
+                <div className="productsContainer">
+                    <ProductCategory />
+                    <ProductFeatured products={products} />
+                    <ProductLatest products={latestProducts} />
+                    <ProductBestSelling products={topSellingProducts} />
+                    <ProductOffer products={offerProducts} />
 
-            </div>
+                </div>
             }
 
-            <About/>
+            <About />
         </div>
     );
 }
