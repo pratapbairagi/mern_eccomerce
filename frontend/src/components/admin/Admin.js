@@ -13,11 +13,15 @@ import AdminOrderList from "./adminContents/AdminOrderList"
 import { GetAllOrderAction } from "../../redux/actions/OrderAction"
 import AdminMessages from "./adminContents/AdminMessages"
 import { Clear_message_error, Clear_message_success } from "../../redux/actions/MessageAction"
+import CreateHomeBanner from "../../pages/home/createandUpdateHomeBanner/CreateHomeBanner"
+import AdminHomeBannerList from "./adminContents/AdminHomeBannerList"
 
 const Admin = () => {
     const { success, error, users } = useSelector(state => state.users)
     const { success: productsSuccess, error: productsError, products } = useSelector(state => state.getProducts)
     const { loading: orderLoading, success: orderSuccess, error: orderError, orders } = useSelector(state => state.orders)
+    const {loading:bannerLoading, success:bannerSuccess, error:bannerError, banners } = useSelector(state=>state.homeBanners)
+
     const messages = useSelector(state => state.allMessages)
 
     const dispatch = useDispatch()
@@ -28,15 +32,15 @@ const Admin = () => {
         dispatch(GetAllOrderAction())
     }, [dispatch])
 
-    useEffect(()=>{
-        if(messages.success){
+    useEffect(() => {
+        if (messages.success) {
             dispatch(Clear_message_success())
         }
-        if(messages.error){
+        if (messages.error) {
             dispatch(Clear_message_error())
         }
-        
-    },[dispatch, messages])
+
+    }, [dispatch, messages])
 
     useEffect(() => {
         if (success) {
@@ -137,6 +141,20 @@ const Admin = () => {
                     </svg>
                     <span>Messages</span>
                 </li>
+
+                <li>
+                    <svg width="1.6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
+                        <path d="M527.79 288H290.5l158.03 158.03c6.04 6.04 15.98 6.53 22.19.68 38.7-36.46 65.32-85.61 73.13-140.86 1.34-9.46-6.51-17.85-16.06-17.85zm-15.83-64.8C503.72 103.74 408.26 8.28 288.8.04 279.68-.59 272 7.1 272 16.24V240h223.77c9.14 0 16.82-7.68 16.19-16.8zM224 288V50.71c0-9.55-8.39-17.4-17.84-16.06C86.99 51.49-4.1 155.6.14 280.37 4.5 408.51 114.83 513.59 243.03 511.98c50.4-.63 96.97-16.87 135.26-44.03 7.9-5.6 8.42-17.23 1.57-24.08L224 288z" />
+                    </svg>
+                    <span>Banner</span>
+                </li>
+
+                <li>
+                    <svg width="1.6rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544 512">
+                        <path d="M527.79 288H290.5l158.03 158.03c6.04 6.04 15.98 6.53 22.19.68 38.7-36.46 65.32-85.61 73.13-140.86 1.34-9.46-6.51-17.85-16.06-17.85zm-15.83-64.8C503.72 103.74 408.26 8.28 288.8.04 279.68-.59 272 7.1 272 16.24V240h223.77c9.14 0 16.82-7.68 16.19-16.8zM224 288V50.71c0-9.55-8.39-17.4-17.84-16.06C86.99 51.49-4.1 155.6.14 280.37 4.5 408.51 114.83 513.59 243.03 511.98c50.4-.63 96.97-16.87 135.26-44.03 7.9-5.6 8.42-17.23 1.57-24.08L224 288z" />
+                    </svg>
+                    <span>About</span>
+                </li>
             </aside>
 
 
@@ -228,6 +246,15 @@ const Admin = () => {
                 <section>
                     <h3>Messages</h3>
                     <AdminMessages messages={messages} />
+                </section>
+                <section>
+                    <h3>banner</h3>
+                    <AdminHomeBannerList banners={banners}/>
+                    {/* <CreateHomeBanner/> */}
+
+                </section>
+                <section>
+                    <h3>About</h3>
                 </section>
             </div>
 

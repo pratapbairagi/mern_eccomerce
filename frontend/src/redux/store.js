@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers} from "redux"
 import {composeWithDevTools} from "redux-devtools-extension"
 import thunk from "redux-thunk"
 import { CartReducer } from "./reducers/CartReducer"
+import { HomeBannerReducer } from "./reducers/HomeBannerReducers"
 import { GetAllMessagesReducer } from "./reducers/MessageReducers"
 import { CreateOrderReducer, GetAllOrderReducer, GetUserOrdersReducer, UpdateOrderReducer } from "./reducers/OrderReducers"
 import { CreateProductCategoryReducer, GetProductCategoriesReducer, GetProductCategoryReducer } from "./reducers/ProductCategoryReducer"
@@ -28,7 +29,8 @@ const reducers = combineReducers({
     orders : GetAllOrderReducer,
     userOrders : GetUserOrdersReducer,
     updateOrder : UpdateOrderReducer,
-    allMessages : GetAllMessagesReducer
+    allMessages : GetAllMessagesReducer,
+    homeBanners : HomeBannerReducer
 })
 
 const initialState = {

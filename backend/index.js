@@ -19,6 +19,7 @@ const orderRoute = require("./routes/orderRoute")
 const paymentRoute = require("./routes/paymentRoute")
 const productCategoryRoute = require("./routes/productCategoryRoute")
 const messageRoute = require("./routes/messageRoute")
+const homeBannerRoute = require("./routes/homeBannerRoute")
 
 // env file
 // dotenv.config({path:"backend/config/.env"})
@@ -40,6 +41,8 @@ app.use("/api", orderRoute)
 app.use("/api", paymentRoute)
 app.use("/api", productCategoryRoute)
 app.use("/api", messageRoute)
+app.use("/api", homeBannerRoute)
+
 
 if(process.env.NODE_ENV){
     app.use(express.static(path.join(__dirname,"../frontend/build")))

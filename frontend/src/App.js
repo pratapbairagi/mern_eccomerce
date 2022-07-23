@@ -35,6 +35,9 @@ import EditProductCategory from './components/productCategory/EditProductCategor
 import Footer from './components/layout/footer/Footer';
 import AboutMore from './pages/about/AboutMore';
 import { GetAllMessageAction } from './redux/actions/MessageAction';
+import { GetHomeBannersAction } from './redux/actions/HomeBannerAction';
+import CreateHomeBanner from './pages/home/createandUpdateHomeBanner/CreateHomeBanner';
+import UpdateHomeBanner from './pages/home/createandUpdateHomeBanner/UpdateHomeBanner';
 
 function App() {
 
@@ -59,6 +62,7 @@ function App() {
     dispatch(GetProductCategoriesAction())
     dispatch(UserLoggedAction())
     dispatch(GetAllProducts("",""))
+    dispatch(GetHomeBannersAction())
   }, [dispatch])
 
   const [auth1, setAuth1] = useState(true)
@@ -124,6 +128,10 @@ function App() {
 
         <ProtectedRoute exact path="/product/category/create" auth={auth2} component={CreateProductCategory} />
         <ProtectedRoute exact path="/product/category/edit/:id" auth={auth2} component={EditProductCategory} />
+        <ProtectedRoute exact path="/banner/create" auth={auth2} component={CreateHomeBanner} />
+        <ProtectedRoute exact path="/banner/edit/:id" auth={auth2} component={UpdateHomeBanner} />
+
+
 
 
 

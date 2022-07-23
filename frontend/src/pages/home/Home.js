@@ -24,6 +24,9 @@ const Home = () => {
     const alert = useAlert()
     const dispatch = useDispatch()
     const {loading, success, error, products, latestProducts, topSellingProducts, offerProducts} = useSelector(state=>state.getProducts)
+    const {loading:bannerLoading, success:bannerSuccess, error:bannerError, banners } = useSelector(state=>state.homeBanners)
+
+
 
     const price ={
         from :0,
@@ -39,6 +42,8 @@ const Home = () => {
         dispatch(GetAllProducts("","",price))
     },[alert, dispatch, success, error])
 
+    console.log(banners)
+
     
     return (
         <div className="homeContainer">
@@ -46,20 +51,26 @@ const Home = () => {
             <div className="homeBannerContainer">
                 <div className="carousel slide" data-bs-ride="carousel" id="carouselContainer">
                     <ol className="carousel-indicators" >
-                        <li className="active" data-bs-target="#carouselContainer" data-bs-slide-to={0}></li>
+                        { banners?.map((bnnr, bnnrI)=>{
+                           return <li className={`${bnnrI === 0 ? "active":""}`} key={bnnrI} data-bs-target="#carouselContainer" data-bs-slide-to={bnnrI}></li>
+                        })}
+
+                        {/* <li className="active" data-bs-target="#carouselContainer" data-bs-slide-to={0}></li>
                         <li data-bs-target="#carouselContainer" data-bs-slide-to={1}></li>
-                        <li data-bs-target="#carouselContainer" data-bs-slide-to={2}></li>
+                        <li data-bs-target="#carouselContainer" data-bs-slide-to={2}></li> */}
                     </ol>
 
                     <div className="carousel-inner">
 
                         {/* <div className="carousel-item active" style={{border:"1px solid red", display:"flex", backfaceVisibility:"visible"}}> */}
-                        <div className="carousel-item active">
+                        { banners?.map((bnnr, bnnrI)=>{
 
-                            <img src={shirtRack} alt="" />
+                       return <div key={bnnrI} className={`carousel-item ${bnnrI === 0 ? "active":""}`}>
+
+                            <img src={bnnr.image.url} alt="" />
 
                                 <div className="bannerPara" >
-                                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Est officiis illo minima architecto voluptatibus cupiditate quisquam unde non maiores voluptas commodi vel accusamus excepturi, aspernatur dignissimos eaque. Nemo dignissimos assumenda vel repellendus error, facere dicta sequi, porro consequuntur maxime reiciendis?</p>
+                                <p >{bnnr.paragraph}</p>
 
                                     <div className="homeBannerBtnsContainer" >
                                         <button >Shop Now</button>
@@ -68,12 +79,15 @@ const Home = () => {
                                 </div>
 
                         </div>
-                        <div className="carousel-item">
+                    })}
+
+                        {/* <div className="carousel-item">
                             <img src={veg} alt="" />
                         </div>
+
                         <div className="carousel-item">
                             <img src={shirts} alt="" />
-                        </div>
+                        </div> */}
                         
                     </div>
 
